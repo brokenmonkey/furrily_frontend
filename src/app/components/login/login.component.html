@@ -1,62 +1,71 @@
-<!--<div class="login container">
-    <form class="login-form">
-        <div class="row">
-            <div class="input-field col s6 offset-s3">
-                <input id="email" autocomplete="off" type="email" class="validate">
-                <label for="email">Email</label>
-            </div>
-            <div class="input-field col s6 offset-s3">
-                <input id="password" autocomplete="off" type="password" class="validate">
-                <label for="password">Password</label>
-            </div>
-        </div>
-        <div class="center-align">
-            <button class="submit btn glow-blue round">Login</button>
-        </div>
-    </form>
-    <div class="row">
-        <div class="options">
-            <div class="center-align">
-                <div class="line">
-                    <span>login with</span>
-                </div>
-                <div class="col s12">
-                    <button class="gplus btn round glow-gplus">google</button>
-                </div>
-            </div>
-            <div class="line">
-                <span>Don't have an account yet?</span>
-                <span>Don't have an account yet?</span>
-            </div>
-        </div>
-    </div>
-</div>-->
 <div class="wrapper">
-    <div class="login row">
-        <div class="logo">
-            <img src="assets/images/logo_blue.svg" style="width: 100%" alt="logo">
-        </div>
-        <form action="" class="login-form vlign">
-            <div class="row">
-                <div class="input-field">
-                    <input id="email" autocomplete="off" type="email" class="validate">
-                    <label for="email">Email</label>
+    <div class="background-card" [@changeSize]='state'>
+        <div class="login row">
+            <div class="logo">
+                <img src="assets/images/logo_blue.svg" style="width: 100%" alt="logo">
+            </div>
+            <div class="change-wrapper" [@changeForm]='state'>
+                <div class="change-login">
+                    <form action="" class="login-form">
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="email" autocomplete="off" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="password" autocomplete="off" type="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class="center-align">
+                            <button class="submit btn glow-blue round">Login</button>
+                        </div>
+                    </form>
+                    <div class="col s12 center-align">
+                        <button class="gplus btn round glow-gplus"><img src="assets/images/gplus.svg" style="height:20px;transform: translate(-15px,5px)" alt="">google</button>
+                    </div>
+                    <div class="line center-align" style="margin: 80px 0 " (click)="form_toggle()">
+                        <span class="col s12" style="font-weight: bold">Don't have an account yet?</span>
+                        <span class="col s12">get a free account now</span>
+                    </div>
                 </div>
-                <div class="input-field">
-                    <input id="password" autocomplete="off" type="password" class="validate">
-                    <label for="password">Password</label>
+                <div class="change-signup">
+                    <form action="" class="login-form">
+                        <div class="row">
+                            <div class="input-field">
+                                <input id="firstName" autocomplete="off" type="text" class="validate">
+                                <label for="firstName">First Name</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="lstName" autocomplete="off" type="text" class="validate">
+                                <label for="lstName">Last Name</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="email" autocomplete="off" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="password" autocomplete="off" type="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="confirmPassword" autocomplete="off" type="password" class="validate">
+                                <label for="confirmPassword">Confirm Password</label>
+                            </div>
+                        </div>
+                        <div class="center-align">
+                            <button class="submit btn glow-blue round">Login</button>
+                        </div>
+                    </form>
+                    <div class="col s12 center-align">
+                        <button class="gplus btn round glow-gplus"><img src="assets/images/gplus.svg" style="height:20px;transform: translate(-15px,5px)" alt="">google</button>
+                    </div>
+                    <div class="line center-align" style="margin: 80px 0" (click)="form_toggle()">
+                        <span class="col s12" style="font-weight: bold">Already have an account?</span>
+                        <span class="col s12">Login hear</span>
+                    </div>
                 </div>
             </div>
-            <div class="center-align">
-                <button class="submit btn glow-blue round">Login</button>
-            </div>
-        </form>
-        <div class="col s12 center-align">
-            <button class="gplus btn round glow-gplus"><img src="assets/images/gplus.svg" style="height:20px;transform: translate(-15px,5px)" alt="">google</button>
-        </div>
-        <div class="line center-align" style="margin: 80px 0 ">
-            <span class="col s12" style="font-weight: bold">Don't have an account yet?</span>
-            <span class="col s12">get a free account now</span>
         </div>
     </div>
 </div>

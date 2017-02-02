@@ -4,32 +4,48 @@ app-login
         background-size: contain
         overflow: auto
         height: 100vh
-        .login
+        .background-card
             margin: 100px auto
             border-radius: 10px
             width: 500px
             padding: 30px
             box-shadow: 0px 3px 30px rgba(#000,0.3)
             background-color: #fff
-            .logo
-                margin: 50px auto
-                width: 300px 
-            .title
-                h1
-                    font-size: 2em
-                    color: color("blue", "base")
-            form.login-form
-                width: 100%
-                // background-color: #ff4545
-                margin: auto
-                padding: 20px
-            .gplus
-                background-color: #da3d00
+            overflow: hidden
+            position: relative
+            height: 670px
+            .login
+                .line:hover
+                    cursor: pointer
+                .change-wrapper
+                    position: relative
+                    height: 382px
+                    .change-login,.change-signup
+                        position: absolute
+                        width: 100%
+                    .change-login
+                        left: 0
+                    .change-signup     
+                        left: calc(100% + 30px)
+                .logo
+                    margin: 50px auto
+                    width: 300px 
+                .title
+                    h1
+                        font-size: 2em
+                        color: color("blue", "base")
+                form.login-form
+                    width: 100%
+                    // background-color: #ff4545
+                    margin: auto
+                    padding: 20px
+                .gplus
+                    background-color: #da3d00
 @media screen and (max-width: 750px) and (orientation: landscape)
     app-login
         .wrapper
             background-image: none
-            .login
+            .background-card
                 margin: 0
                 box-shadow: none
                 width: 100%
@@ -38,11 +54,12 @@ app-login
     app-login
         .wrapper
             background-image: none
-            .login
-                .logo
-                    margin: 50px auto
-                    width: 100%
-                    max-width: 250px 
+            .background-card
                 margin: 0
                 box-shadow: none
                 width: 100%
+                .login
+                    .logo
+                        margin: 50px auto
+                        width: 100%
+                        max-width: 250px 
