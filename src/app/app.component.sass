@@ -1,0 +1,80 @@
+nav
+    background-color: #fff
+    box-shadow: 0 3px 11px rgba(0, 0, 0, 0.15)
+    height: 64px
+    z-index: 999
+    .nav-wrapper
+        a.logo
+            float: left
+            img
+                margin: 12px 10px
+                height: 40px 
+        .search
+            position: relative
+            display: inline-block
+            margin-left: 75px
+            input
+                width: 300px
+                margin: 17px 0
+                height: 30px
+            img
+                height: 25px
+                opacity: 0.5
+                position: absolute
+                left: -35px
+                top: 19.2px
+        ul
+            margin: 12px 20px 12px 0
+            padding: 0 0 12px 0
+            li
+                position: relative
+                top: -12px
+                display: inline-block
+                font-family: roboto
+                margin: 0px 010px
+                height: 40px
+                line-height: 40px
+                color: #000c28
+                cursor: pointer
+                &.left-line
+                    &:after
+                        content: ""
+                        position: absolute
+                        background-color: rgba(#696969,.06)
+                        width: 2px
+                        top: 0
+                        left: -12px
+                        height: 40px
+                &.img
+                    top: 2px
+                    height: 40px
+                    padding: 0
+                    margin-bottom: -14px
+                    width: 40px
+                    img
+                        border-radius: 40px
+                        width: 40px
+                        // overflow: hidden
+                        height: 40px
+                &.text
+                    font-weight: 500
+                    color: #696969
+                &.icon
+                    width: auto
+                    img
+                        height: 20px
+                        transform: translateY(5px) 
+        .dots
+            float: right
+            margin: 14px 10px
+            // margin-right: 10px
+            height: 40px
+            .circle
+                margin: 5px
+                // padding: 
+                width: 5px
+                height: 5px
+                background-color: #000c28
+@media(min-width: 1200px)
+    .search
+        margin-left: 150px
