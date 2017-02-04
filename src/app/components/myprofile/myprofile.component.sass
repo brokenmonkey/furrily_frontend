@@ -1,0 +1,40 @@
+app-myprofile
+    .profile-pic
+        overflow: hidden
+        border-radius: 100%
+        width: 150px
+        height: 150px
+        margin: auto
+        position: relative
+        img
+            height: 150px
+            top: 50%
+            left: 50%
+            position: absolute
+            transform: translate(-50%,-50%)
+        
+    .rating
+        i
+            color: color("blue", "base")
+            opacity: 0.25
+            &.on
+                opacity: 1
+    .details,.bio
+        margin: 3px 0 10px 0
+        .title,.info
+            .icon
+                color: #696969
+                transform: translateY(6px)
+                opacity: 0.75
+            p
+                color: #696969
+                margin: 0
+                display: inline-block
+                // line-height: 15px
+        .info
+            p
+                transform: translateY(7px)
+            &.bio
+                p 
+                    padding: 0 10px 0 10px    
+

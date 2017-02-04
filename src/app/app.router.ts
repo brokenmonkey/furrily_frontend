@@ -7,7 +7,7 @@ import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { EditprofileComponent } from './components/editprofile/editprofile.component';
 
 export const router: Routes = [
-    { path: '', redirectTo: 'editprofile', pathMatch: 'full' },
+    { path: '', redirectTo: 'myprofile', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'myprofile', component: MyprofileComponent },
     { path: 'editprofile', component: EditprofileComponent },

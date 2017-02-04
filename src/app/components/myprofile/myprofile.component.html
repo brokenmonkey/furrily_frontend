@@ -1,0 +1,69 @@
+<div class="container">
+
+    <div class="row">
+        <div class="section">
+            <h4>My profile</h4>
+        </div>
+        <div class="divider"></div>
+        <div class="col l4  m12 left" style="padding: 20px">
+            <div class="background-card">
+                <div class="profile-pic center circle">
+                    <img src="assets/images/pic.jpg" alt="" class="pic">
+                </div>
+                <div class="name center">
+                    <h5 class="center" style="padding-bottom: 5px">
+                        ChakaBhai Khatri
+                    </h5>
+                </div>
+                <div class="rating center-align" style="padding-bottom: 10px">
+                    <i class="material-icons on">star</i>
+                    <i class="material-icons on">star</i>
+                    <i class="material-icons on">star</i>
+                    <i class="material-icons">star</i>
+                    <i class="material-icons">star</i>
+                </div>
+                <div class="divider"></div>
+                <div *ngFor="let i of [1,2,3,4,5]">
+                    <div class="details row">
+                        <div class="detail">
+                            <div class="col s6 left-align title">
+                                <i class="material-icons icon">star</i>
+                                <p>
+                                    test
+                                </p>
+                            </div>
+                            <div class="col s6 right-align info">
+                                <p>
+                                    test
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+                </div>
+                <div class="bio row">
+                    <div class="col s12 left-align title">
+                        <i class="material-icons icon">star</i>
+                        <p>
+                            bio
+                        </p>
+                    </div>
+                    <div class="col s12 left-align bio info">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione cum, dolorum in ut porro nam! Consequuntur eveniet molestias, labore laboriosam iste, ratione pariatur repudiandae, libero deleniti reprehenderit explicabo optio. Non.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col l8 right" style="padding: 20px">
+            <div class="background-card">
+                <h2>test</h2>
+            </div>
+            <div class="background-card">
+                <h2>test</h2>
+            </div>
+        </div>
+    </div>
+</div>
