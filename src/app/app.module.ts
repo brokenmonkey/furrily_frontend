@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { EditprofileComponent } from './components/editprofile/editprofile.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { EditprofileComponent } from './components/editprofile/editprofile.compo
     LoginComponent,
     MyprofileComponent,
     EditprofileComponent,
+    SearchComponent,
     ],
   imports: [
     BrowserModule,

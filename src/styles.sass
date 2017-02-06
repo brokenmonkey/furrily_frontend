@@ -3,6 +3,7 @@
 @import "app/components/login/login.component"
 @import "app/components/myprofile/myprofile.component"
 @import "app/components/editprofile/editprofile.component"
+@import "app/components/search/search.component"
 
 .overlay
     display: none
@@ -25,9 +26,48 @@
 .gig-card
     border-radius: 7.5px
     padding: 10px
+    // width: 250px
     box-shadow: 0px 3px 30px rgba(#000,0.3)
     background-color: #fff
     overflow: hidden
+    height: 400px
+    position: relative
+    @media(max-width: 600px)
+        max-width: 250px
+        margin: 20px auto
+    .pic
+        position: relative
+        margin-top: 10px
+        height: 200px
+        // background: #ff4545
+        width: calc(100% + 20px)
+        margin-right: -10px
+        left: -10px
+        overflow: hidden
+        img
+            // opacity: 0.3
+            position: absolute
+            width: 100%
+            left: 50%
+            top: 50%
+            transform: translate(-50%,-50%)
+    .title
+        margin-top: 10px
+        h6
+            font-size: 1.4rem
+    .bottom
+        width: 100%
+        position: absolute
+        bottom: 0
+        left: 0px
+        padding: 10px 
+        color: #696969
+        h6
+            font-size: 1.2rem
+        .rate
+            h6
+                font-size: 1.5rem
+                color: color("blue", "base")
 .rating
     i
         color: color("blue", "base")

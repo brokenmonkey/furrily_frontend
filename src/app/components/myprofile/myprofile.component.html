@@ -6,8 +6,8 @@
         </div>
         <div class="divider"></div>
         <!--sidebar start-->
-        <div class="col l4  m12 left" style="padding: 20px">
-            <div class="background-card">
+        <div class="col l4 m12 s12 left profile-data center-align" style="padding: 20px">
+            <div class="background-card" style="max-width: 350px;margin: auto">
                 <!--profile pic-->
                 <div class="profile-pic center circle">
                     <img src="assets/images/pic.jpg" alt="" class="pic">
@@ -69,7 +69,7 @@
                 </div>-->
             </div>
         </div>
-        <div class="col l8 right" style="padding: 20px">
+        <div class="col l8 right profile-disc" style="padding: 20px">
             <div class="background-card">
                 <div class="about">
                     <h5>discription</h5>
@@ -104,9 +104,14 @@
                 </div>
             </div>
             <div class="gigs posted">
-                <h4>
-                    Posted Gigs
-                </h4>
+                <div class="title row">
+                    <h4 class="left">
+                        Posted Gigs
+                    </h4>
+                    <h5 class="more right">
+                        more
+                    </h5>
+                </div>
                 <div class="row" style="margin-left: 0;margin-right: 0">
                     <div *ngFor="let i of [1,2,3]">
                         <div class="col s12 m4">
@@ -118,7 +123,26 @@
                                     <i class="material-icons">star</i>
                                     <i class="material-icons">star</i>
                                 </div>
-                                test
+                                <div class="pic">
+                                    <img src="assets/images/gig.jpg" alt="">
+                                </div>
+                                <div class="title">
+                                    <h6>
+                                        I will kill you and have fun while watching it
+                                    </h6>
+                                </div>
+                                <div class="bottom">
+                                    <div class="posted-by left">
+                                        <h6>
+                                            chakabhai
+                                        </h6>
+                                    </div>
+                                    <div class="rate right">
+                                        <h6>
+                                            $5
+                                        </h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
