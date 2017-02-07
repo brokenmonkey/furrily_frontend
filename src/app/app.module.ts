@@ -8,6 +8,8 @@ import { LoginComponent } from './components/login/login.component';
 import { MyprofileComponent } from './components/myprofile/myprofile.component';
 import { EditprofileComponent } from './components/editprofile/editprofile.component';
 import { SearchComponent } from './components/search/search.component';
+import { PostgigComponent } from './components/postgig/postgig.component';
+import { GigpageComponent } from './components/gigpage/gigpage.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { SearchComponent } from './components/search/search.component';
     MyprofileComponent,
     EditprofileComponent,
     SearchComponent,
+    PostgigComponent,
+    GigpageComponent,
     ],
   imports: [
     BrowserModule,

@@ -4,6 +4,8 @@
 @import "app/components/myprofile/myprofile.component"
 @import "app/components/editprofile/editprofile.component"
 @import "app/components/search/search.component"
+@import "app/components/postgig/postgig.component"
+@import "app/components/gigpage/gigpage.component"
 
 .overlay
     display: none
@@ -77,3 +79,25 @@
     &.small
         i 
             font-size: 18px
+.btn-add
+    width: 40px
+    height: 40px
+    padding: 0
+    border-radius: 20px
+    position: relative
+    .add
+        &:after,&:before
+            content: ""
+            position: absolute
+            // height: 2px
+            // width: 20px
+            background: #fff
+            top: 50%
+            left: 50%
+            transform: translate(-50%,-50%)
+        &:after
+            height: 2px
+            width: 20px
+        &:before
+            height: 20px
+            width: 2px
