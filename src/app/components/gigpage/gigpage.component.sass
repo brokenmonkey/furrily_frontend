@@ -1,3 +1,66 @@
 app-gigpage
     .edit-gig
         color: color("blue", "base")
+    .btn-add
+        @media #{$small-and-down}
+            right: 25px
+    .container
+        width: 90%  
+    .Price
+        h6
+            color: color("blue", "base")
+            font-size: 1.4em
+            margin: 0
+    .buy
+        &.hide-on-large-only
+            text-align: right
+            .btn
+            @media #{$small-and-down}
+                text-align: center
+                .btn
+                    margin-right: 0
+                    margin-left: 0
+    .review
+        position: relative
+        // height: 200px
+        &:before
+            position: absolute
+            content: ""
+            bottom: 0
+            width: 100%
+            height: 1px
+            opacity: 0.2
+            background-color: #696969
+        .photo
+            // margin-top: 50px
+            height: 200px
+            min-width: 120px
+            overflow: hidden
+            @media #{$small-and-down}
+                height: 120px
+            .img-wrapper
+                width: 100px
+                height: 100px
+                position: relative
+                overflow: hidden
+                border-radius: 100px
+                margin: 50px auto
+                @media #{$small-and-down}
+                    margin-top: 10px
+                // margin-top: 50px
+                img
+                    height: 120px
+                    position: absolute
+                    transform: translate(-50%,-50%)
+                    top: 50%
+                    left: 50%
+        .text-wrapper
+            display: inline-block
+            @media #{$medium-and-up}
+                width: calc(83.33333% - 38px) !important
+            .text
+                height: 200px
+                .line-1
+                    margin-bottom: 0
+                    .rating
+                        margin: 0.82rem 0 0.656rem 0

@@ -7,15 +7,20 @@ declare var $;
   // styleUrls: ['./gigpage.component.sass']
 })
 export class GigpageComponent implements OnInit {
-
-  constructor() { }
+  dateObj : Date;
+  constructor() {
+    this.dateObj = new Date()
+  }
 
   ngOnInit() {
       $('.carousel.carousel-slider').carousel({fullWidth: true});
-      
+      // var dateObj : Date;
   $(document).ready(function(){
     $('.collapsible').collapsible();
+    // console.log(date);
+    
   });
+        
         
   }
 
