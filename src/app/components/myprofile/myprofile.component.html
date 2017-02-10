@@ -115,7 +115,7 @@
                     </h5>
                 </div>
                 <div class="row" style="margin-left: 0;margin-right: 0">
-                    <div *ngFor="let i of [1,2,3]">
+                    <div *ngFor="let i of [1,2,3,4]">
                         <div class="col s12 m4">
                             <div class="gig-card">
                                 <div class="rating small">
@@ -160,33 +160,44 @@
                     </h5>
                 </div>
                 <div class="row">
-                    <div class="col s12 m12 l8">
-                        <div class="portfolio-card port-large ">
-                            <div class="row">
-                                <div class="col s6 m7 l8" style="overflow: hiden">
+                    <div *ngFor="let i of [1,2,3]">
+                        <div class="col s12 m6 l4">
+                            <div class="portfolio-card">
+                                <div class="pic">
                                     <img src="assets/images/gig.jpg" alt="">
                                 </div>
-                                <div class="col s6 m5 l4">
-                                    <h5>Title</h5>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque in modi, labore eligendi distinctio quos eveniet consequatur corporis repudiandae enim? Id possimus unde dolore! Commodi, ad corrupti. Saepe, minus vel.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m12 l4">
-                        <div class="portfolio-card port-large ">
-                            <div class="row">
-                                <div class="col s12" style="overflow: hiden">
-                                    <img src="assets/images/gig.jpg" alt="">
-                                </div>
-                                <div class="col s12 left-align">
-                                    <h5>Title</h5>
+                                <div class="title">
+                                    <h6>
+                                        I will kill you and have fun while watching it
+                                    </h6>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div class="reviews">
+                <div class="title row">
+                    <h4 class="left">
+                        Reviews
+                    </h4>
+                </div>
+                <div class="row">
+                    <div *ngFor="let i of [1,2,3]">
+                        <div class="col s12 m6 l4">
+                            <div class="portfolio-card">
+                                <div class="pic">
+                                    <img src="assets/images/gig.jpg" alt="">
+                                </div>
+                                <div class="title">
+                                    <h6>
+                                        I will kill you and have fun while watching it
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
