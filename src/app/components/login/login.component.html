@@ -6,23 +6,23 @@
             </div>
             <div class="change-wrapper" [@changeForm]='state'>
                 <div class="change-login">
-                    <form action="" class="login-form">
+                    <form action="" class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
                         <div class="row">
                             <div class="input-field">
-                                <input id="email" autocomplete="off" type="email" class="validate">
+                                <input id="email" autocomplete="off" type="email" class="validate" formControlName="username">
                                 <label for="email">Email</label>
                             </div>
                             <div class="input-field">
-                                <input id="password" autocomplete="off" type="password" class="validate">
+                                <input id="password" autocomplete="off" type="password" class="validate" formControlName="password">
                                 <label for="password">Password</label>
                             </div>
                         </div>
                         <div class="center-align">
-                            <button routerLink="/myprofile" class="submit btn glow-blue round">Login</button>
+                            <button type="submits" class="submit btn glow-blue round" [disabled]="!loginForm.valid">Login</button>
                         </div>
                     </form>
                     <div class="col s12 center-align">
-                        <button routerLink="/myprofile" class="gplus btn round glow-gplus"><img src="assets/images/gplus.svg" style="height:20px;transform: translate(-15px,5px)" alt="">google</button>
+                        <button class="gplus btn round glow-gplus"><img src="assets/images/gplus.svg" style="height:20px;transform: translate(-15px,5px)" alt="">google</button>
                     </div>
                     <div class="line center-aligng" style="margin: 80px 0" (click)="form_toggle()">
                         <span class="col s12g" style="font-weight: bold">Don't have an account yet?</span>
@@ -30,31 +30,31 @@
                     </div>
                 </div>
                 <div class="change-signup">
-                    <form class="login-form">
+                    <form class="login-form" [formGroup]="signupForm" (ngSubmit)="signup()">
                         <div class="row">
                             <div class="input-field">
-                                <input id="firstName" autocomplete="off" type="text" class="validate">
+                                <input id="firstName" autocomplete="off" type="text" class="validate" formControlName="firstname">
                                 <label for="firstName">First Name</label>
                             </div>
                             <div class="input-field">
-                                <input id="lstName" autocomplete="off" type="text" class="validate">
+                                <input id="lstName" autocomplete="off" type="text" class="validate" formControlName="lastname">
                                 <label for="lstName">Last Name</label>
                             </div>
                             <div class="input-field">
-                                <input id="email" autocomplete="off" type="email" class="validate">
+                                <input id="email" autocomplete="off" type="email" class="validate" formControlName="email">
                                 <label for="email">Email</label>
                             </div>
                             <div class="input-field">
-                                <input id="password" autocomplete="off" type="password" class="validate">
+                                <input id="password" autocomplete="off" type="password" class="validate" formControlName="password">
                                 <label for="password">Password</label>
                             </div>
                             <div class="input-field">
-                                <input id="confirmPassword" autocomplete="off" type="password" class="validate">
+                                <input id="confirmPassword" autocomplete="off" type="password" class="validate" formControlName="confirm_password">
                                 <label for="confirmPassword">Confirm Password</label>
                             </div>
                         </div>
                         <div class="center-align">
-                            <button routerLink="/myprofile" class="submit btn glow-blue round">Login</button>
+                            <button class="submit btn glow-blue round" [disabled]="!signupForm.valid && signupForm.value['password'] != signupForm.value['confirm_password']">SignUp</button>
                         </div>
                     </form>
                     <div class="col s12 center-align">

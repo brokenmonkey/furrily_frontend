@@ -6,8 +6,10 @@ import {
   state,
   Component,
   OnInit } from '@angular/core';
-  import { FormGroup } from '@angular/forms';
-
+  import { FormGroup,FormControl,Validators } from '@angular/forms';
+  import { HttpService } from '../../providers/http'
+  import { UserService } from '../../providers/user'
+declare var Materialize;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -38,12 +40,45 @@ import {
 })
 export class LoginComponent implements OnInit {
   state: string = 'login'
-  constructor() { }
+  loginForm : FormGroup;
+  signupForm : FormGroup;
+  constructor(private user: UserService, private http: HttpService) { 
 
+    this.loginForm = new FormGroup({
+      "username": new FormControl('', Validators.required),
+      "password": new FormControl('', Validators.required)
+    })
+    this.signupForm =  new FormGroup({
+      "firstname": new FormControl('', Validators.required),
+      "lastname": new FormControl('', Validators.required),
+      "email": new FormControl('', Validators.required),
+      "password": new FormControl('', Validators.required),
+      "confirm_password": new FormControl('', Validators.required),
+    })
+  }
   ngOnInit() {
   }
   form_toggle() {
     this.state = (this.state === 'login' ? 'signup' : 'login');
     console.log(this.state);
+  }
+  login(){
+    if (this.loginForm.valid){
+      this.user.login(this.loginForm.value["username"],this.loginForm.value["password"])
+        .subscribe(data => {
+          Materialize.toast("login_thay_gayu");
+        })
+    }
+  }
+  signup(){
+    if (this.signupForm.valid && this.signupForm.value['password'] == this.signupForm.value['confirm_password']){
+      // this.user.signuo(this.signupForm.value["firstname"])
+      this.http.post("/api/signup", this.signupForm.value)
+        .subscribe(res => {
+          Materialize.toast("signup_thay_gayu");
+          // console.log("chodu");
+          
+        })
+    }
   }
 }
