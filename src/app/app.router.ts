@@ -8,15 +8,17 @@ import { EditprofileComponent } from './components/editprofile/editprofile.compo
 import { SearchComponent } from './components/search/search.component';
 import { PostgigComponent } from './components/postgig/postgig.component';
 import { GigpageComponent } from './components/gigpage/gigpage.component';
+import { CartComponent } from './components/cart/cart.component';
 
 export const router: Routes = [
-    { path: '', redirectTo: 'gigpage', pathMatch: 'full' },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'myprofile', component: MyprofileComponent },
     { path: 'editprofile', component: EditprofileComponent },
     { path: 'search', component: SearchComponent },
     { path: 'postgig', component: PostgigComponent},
-    { path: 'gigpage', component: GigpageComponent}
+    { path: 'gigpage', component: GigpageComponent},
+    { path : "carth" , component: CartComponent}
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);

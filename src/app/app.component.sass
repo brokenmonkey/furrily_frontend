@@ -4,6 +4,7 @@ nav
     height: 64px
     z-index: 999
     .nav-wrapper
+        overflow: hidden
         a.logo
             float: left
             img
@@ -29,19 +30,20 @@ nav
             top: 64px
             background: #fff
             // transform: translateY(64px)
-            height: 64px
-            // padding: 64px 0 0 0 
+            height: 50px
+            padding: 0 20px 0 60px
+            width: 100%
             input
-                width: 100vw
                 // transform: translateY(-64px)
                 margin: 17px 0
                 height: 30px
+                margin-bottom: 0
             img
                 height: 25px
                 opacity: 0.5
                 position: absolute
-                left: -35px
-                top: 19.2px
+                left: 20px
+                top: 20px
         ul
             margin: 12px 20px 12px 0
             padding: 0 0 12px 0
@@ -100,9 +102,8 @@ nav
                 width: 5px
                 height: 5px
                 background-color: #000c28
-
 @media(min-width: 1200px)
     .search
         margin-left: 150px
         input
-            width: 400px
+            width: 400px !important

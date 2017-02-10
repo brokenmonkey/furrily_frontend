@@ -22,6 +22,7 @@
 .glow-pink
     box-shadow: 0px 3px 10px rgba(#e52f5f,0.5)
     color: #e52f5f
+    overflow: hidden
     i
         color: #e52f5f
     &:hover
@@ -32,7 +33,7 @@
     box-shadow: 0px 3px 30px rgba(#000,0.3)
     background-color: #fff
     overflow: hidden
-.gig-card,.portfolio-card
+.gig-card,.portfolio-card,.review-card
     border-radius: 7.5px
     padding: 10px
     // width: 250px
@@ -45,7 +46,7 @@
     &.portfolio-card
         height: 300px
     @media(max-width: 600px)
-        max-width: 250px
+        max-width: 300px
     .pic
         position: relative
         margin-top: 10px
@@ -93,8 +94,8 @@
         i 
             font-size: 18px
 .btn-add
-    width: 40px
-    height: 40px
+    width: 30px
+    height: 30px
     padding: 0
     border-radius: 20px
     position: relative
@@ -109,11 +110,11 @@
             left: 50%
             transform: translate(-50%,-50%)
         &:after
-            height: 2px
-            width: 20px
+            height: 1.5px
+            width: 15px
         &:before
-            height: 20px
-            width: 2px
+            height: 15px
+            width: 1.5px
 .marg
     &.a0
         margin: 0

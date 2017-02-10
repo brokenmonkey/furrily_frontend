@@ -22,7 +22,7 @@
             <li class="img left-line"><img src="assets/images/pic.jpg" alt=""></li>
             <li class="text" style="margin-left: 5px">JavaScript</li>
         </ul>
-        <div class="dots right hide-on-large-only">
+        <div class="dots right hide-on-large-only button-collapse" data-activates="slide-out">
             <div class="circle"></div>
             <div class="circle"></div>
             <div class="circle"></div>
@@ -32,5 +32,22 @@
         </div>
     </div>
 </nav>
-<div class="hide-on-large-only row" style="margin-bottom: 20px"></div>
+
+<ul id="slide-out" class="side-nav">
+    <li>
+        <div class="userView">
+            <a href="#!user"><img class="circle" src="assets/images/pic.jpg"></a>
+            <a href="#!name"><span class="grey-text text-darken-4 name">John Doe</span></a>
+            <a href="#!email"><span class="grey-text text-darken-4 email">jdandturk@gmail.com</span></a>
+        </div>
+    </li>
+    <li><a href="#!">My profile</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a href="#!">Second Link</a></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+</ul>
+<div class="hide-on-large-only row marg b30"></div>
 <router-outlet></router-outlet>
