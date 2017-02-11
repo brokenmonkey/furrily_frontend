@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div class="center-align">
-                            <button type="submits" class="submit btn glow-blue round" [disabled]="!loginForm.valid">Login</button>
+                            <button type="submits" class="submit btn glow-blue round" style="width: 100%" [disabled]="!loginForm.valid">Login</button>
                         </div>
                     </form>
                     <div class="col s12 center-align">
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="center-align">
-                            <button class="submit btn glow-blue round" [disabled]="!signupForm.valid && signupForm.value['password'] != signupForm.value['confirm_password']">SignUp</button>
+                            <button class="submit btn glow-blue round" [disabled]="!signupForm.valid && signupForm.value['password'] != signupForm.value['confirm_password']" style="width: 100%">SignUp</button>
                         </div>
                     </form>
                     <div class="col s12 center-align">
