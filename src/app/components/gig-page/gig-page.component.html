@@ -1,0 +1,200 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12 l9">
+            <div class="row">
+                <div class="section col s8">
+                    <h4>Your Gig</h4>
+                </div>
+                <div class="edit-gig col s4 right-align">
+                    <h5 style="font-size: 1.25em ;margin-top: 33px"><i class="material-icons" style="font-size: 16px">mode_edit</i>Edit</h5>
+                </div>
+                <div class="col s6 marg b20 left-align">
+                    <div class="blue-text hide-on-small-only">
+                        by
+                    </div>
+                    <div class="grey-text">
+                        Chaka Bhai
+                    </div>
+                </div>
+                <div class="col s6 marg b20 right-align  grey-text">
+                    <div class="hide-on-small-only">
+                        Date modified:
+                    </div>
+                    {{dateObj | date:'d'}}, {{dateObj | date:'MMMM '}} {{dateObj | date:'y'}}
+                </div>
+                <div class="col s12 divider"></div>
+            </div>
+            <div class="col s12">
+                <div class="carousel carousel-slider center" data-indicators="true">
+                    <div class="carousel-item red white-text" href="#one!">
+                    </div>
+                    <div class="carousel-item amber white-text" href="#two!">
+                    </div>
+                    <div class="carousel-item green white-text" href="#three!">
+                    </div>
+                    <div class="carousel-item blue white-text" href="#four!">
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 divider" style="margin-top: 20px"></div>
+            <div class="discreption col s12">
+                <div class="title">
+                    <h5>discreption</h5>
+                </div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eaque reprehenderit atque labore, eius, fuga, mollitia consequatur consectetur, nesciunt provident quae ab. Quasi quam eius, nesciunt, omnis doloremque iste a.
+            </div>
+            <div class="catagory col s12">
+                <div class="chip">
+                    Tag
+                    <i class="close material-icons">close</i>
+                </div>
+                <div class="chip">
+                    Tag
+                    <i class="close material-icons">close</i>
+                </div>
+                <div class="chip">
+                    Tag
+                    <i class="close material-icons">close</i>
+                </div>
+                <div class="chip">
+                    Tag
+                    <i class="close material-icons">close</i>
+                </div>
+                <div class="chip add white marg t20">
+                    add skill
+                    <i class="close material-icons">library_add</i>
+                </div>
+            </div>
+            <div class="buy col s12 marg b10 hide-on-large-only">
+                <div class="btn glow-blue round inlineblock marg t20 r10">
+                    Order Now(25$)
+                </div>
+                <div class="btn glow-pink white round inlineblock marg t20 l10">
+                    Add to Wishlist
+                </div>
+            </div>
+            <div class="col s12 divider marg t20"></div>
+            <div class="reviews col s12">
+                <div class="row">
+                    <div class="section col s6 marg t20">
+                        <h5>Reviews</h5>
+                    </div>
+                    <div class="add-review col s1 right right-align marg t20">
+                        <div class="btn-add glow-blue circle blue base">
+                            <div class="add"></div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+                    <div class="review row">
+                        <div class="photo col s12 m2 hide-on-small-only">
+                            <div class="img-wrapper">
+                                <img src="assets/images/pic.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="text-wrapper col s12 m10">
+                            <div class="text">
+                                <div class="line-1 row">
+                                    <div class="name col s6">
+                                        <h5>
+                                            Chakabhai
+                                        </h5>
+                                    </div>
+                                    <div class="ratings col s6 right-align">
+                                        <div class="rating hide-on-small-only">
+                                            <i class="material-icons on">star</i>
+                                            <i class="material-icons on">star</i>
+                                            <i class="material-icons on">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                        </div>
+                                        <div class="rating small hide-on-med-and-up">
+                                            <i class="material-icons on">star</i>
+                                            <i class="material-icons on">star</i>
+                                            <i class="material-icons on">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line-2">
+                                    <div class="date gray-text">
+                                        {{dateObj | date:'d'}}, {{dateObj | date:'MMMM '}} {{dateObj | date:'y'}}
+                                    </div>
+                                </div>
+                                <div class="line-3">
+                                    <div class="disc">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut, excepturi obcaecati. Rem, maiores. Natus debitis, labore voluptatum. Voluptatem fuga voluptatibus voluptas commodi placeat laudantium. Placeat quod id expedita accusamus!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m12 l3 hide-on-med-and-down" style="margin-top: 130px">
+            <div class="background-card">
+                <div class="row marg a0">
+                    <div class="ratings col s10 left-align left marg t10 b10">
+                        <!--<div class="rating hide-on-small-only">
+                            <i class="material-icons on">star</i>
+                            <i class="material-icons on">star</i>
+                            <i class="material-icons on">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </div>-->
+                        <div class="rating small">
+                            <i class="material-icons on">star</i>
+                            <i class="material-icons on">star</i>
+                            <i class="material-icons on">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </div>
+                    </div>
+                    <div class="col s2 Price marg t10 b10">
+                        <h6>$5</h6>
+                    </div>
+                    <div class="divider col s12 marg b20"></div>
+                    <div class="gig-sales">
+                        <div class="col s10">
+                            <div class="grey-text">
+                                Overall Rating
+                            </div>
+                        </div>
+                        <div class="col s2 grey-text">
+                            50
+                        </div>
+                        <div class="col s10">
+                            <div class="grey-text">
+                                Reviews
+                            </div>
+                        </div>
+                        <div class="col s2 grey-text">
+                            50
+                        </div>
+                        <div class="col s10">
+                            <div class="grey-text">
+                                Sales
+                            </div>
+                        </div>
+                        <div class="col s2 grey-text">
+                            50
+                        </div>
+                    </div>
+                    <div class="divider col s12 marg t20"></div>
+                    <div class="buy col s12 center marg t20 b10">
+                        <div class="btn glow-blue round">
+                            Order Now(25$)
+                        </div>
+                    </div>
+                    <div class="favourite col s12  center marg t10 b20">
+                        <div class="btn glow-pink white round">
+                            Add to Wishlist
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
