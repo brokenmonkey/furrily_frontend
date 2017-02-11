@@ -17,7 +17,7 @@ export const router: Routes = [
     { path: 'filter', component: SearchComponent },
     { path: 'post-gig', component: PostGigComponent},
     { path: 'gig-page', component: GigPageComponent},
-    { path : 'cart' , component: CartComponent}
+    { path: 'cart' , component: CartComponent}
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);
