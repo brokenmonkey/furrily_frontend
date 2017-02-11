@@ -3,9 +3,11 @@
         <h4 class="col s12">Edit Profile</h4>
         <!--<hr>-->
         <form action="" class="details row col s12">
-            <h5>
-                Personal details
-            </h5>
+            <div class="row">
+                <h5 class="col s6">
+                    Personal details
+                </h5>
+            </div>
             <div class="input-field col s12 m6">
                 <input id="last_name" type="text" class="validate">
                 <label for="last_name">Last Name</label>
@@ -18,7 +20,7 @@
                 <textarea id="textarea1" class="materialize-textarea"></textarea>
                 <label for="textarea1">Bio</label>
             </div>
-            <h5>
+            <h5 class="col s12">
                 Contact details
             </h5>
             <div class="input-field col s12 m6">
@@ -35,11 +37,25 @@
             </div>
             <label>Browser Select</label>
             <select class="browser-default col s12 m6">
-    <option value="" disabled selected>select contry</option>
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-  </select>
+                <option value="" disabled selected>select contry</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+            <h5 class="col s12">
+                Account details
+            </h5>
+            <div class="input-field col s12 m6">
+                <input id="email" type="text" class="validate">
+                <label for="email">email</label>
+            </div>
+            <div class="input-field col s12 m6">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+            <div class="col s12 right-align marg t20">
+                <button class="btn round glow-blue">Save</button>
+            </div>
         </form>
     </div>
 </div>
