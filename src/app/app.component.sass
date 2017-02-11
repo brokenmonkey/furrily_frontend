@@ -3,6 +3,8 @@ nav
     box-shadow: 0 3px 11px rgba(0, 0, 0, 0.15)
     height: 64px
     z-index: 999
+    position: fixed
+    width: 100%
     .nav-wrapper
         overflow: hidden
         a.logo
@@ -26,24 +28,31 @@ nav
                 top: 19.2px
         .search-mobile
             position: absolute
+            overflow: hidden
             // display: block
-            top: 64px
-            background: #fff
-            // transform: translateY(64px)
-            height: 50px
+            top: 0
+            left: 100%
+            background-color: #fff
+            height: 64px
             padding: 0 20px 0 60px
             width: 100%
             input
                 // transform: translateY(-64px)
-                margin: 17px 0
+                margin: 20px 0
                 height: 30px
-                margin-bottom: 0
+                // margin: 0
+                border-bottom: 0 !important
+                box-shadow: none !important
+                // &:active
             img
                 height: 25px
                 opacity: 0.5
                 position: absolute
-                left: 20px
                 top: 20px
+                &.search-logo
+                    left: 20px
+                &.close
+                    right: 20px
         ul
             margin: 12px 20px 12px 0
             padding: 0 0 12px 0

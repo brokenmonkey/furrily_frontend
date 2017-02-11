@@ -7,9 +7,10 @@
             <input type="text">
             <img src="assets/images/zoom.svg" alt="">
         </div>
-        <div class="search-mobile hide-on-large-only">
-            <input type="text" placeholder="Search">
-            <img src="assets/images/zoom.svg" alt="">
+        <div class="search-mobile hide-on-large-only" [@search]='state'>
+            <input id="input-mobile" type="text" placeholder="Search">
+            <img class="search-logo" src="assets/images/zoom.svg" alt="">
+            <img class="close" src=" assets/images/close.svg" (click)="search_toggle()" alt="">
         </div>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li class="icon"><img src="assets/images/cart.svg"></li>
@@ -27,7 +28,7 @@
             <div class="circle"></div>
             <div class="circle"></div>
         </div>
-        <div class="search-icon right hide-on-large-only" style="height: 64px; margin: 12px">
+        <div class="search-icon right hide-on-large-only" (click)="search_toggle()" style="height: 64px; margin: 12px">
             <img src=" assets/images/zoom.svg " alt=" " style="height: 30px;margin-top: 5px">
         </div>
     </div>
@@ -49,5 +50,5 @@
     <li><a class="subheader">Subheader</a></li>
     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
 </ul>
-<div class="hide-on-large-only row marg b30" *ngIf="shouldShowNav"></div>
+<!--<div class="hide-on-large-only row marg b30" *ngIf="shouldShowNav"></div>-->
 <router-outlet></router-outlet>
