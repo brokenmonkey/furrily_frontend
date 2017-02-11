@@ -1,24 +1,23 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { MyprofileComponent } from './components/myprofile/myprofile.component';
-import { EditprofileComponent } from './components/editprofile/editprofile.component';
+import { ProfileComponent } from './components/profile/profile';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { SearchComponent } from './components/search/search.component';
-import { PostgigComponent } from './components/postgig/postgig.component';
-import { GigpageComponent } from './components/gigpage/gigpage.component';
+import { PostGigComponent } from './components/post-gig/post-gig.component';
+import { GigPageComponent } from './components/gig-page/gig-page.component';
 import { CartComponent } from './components/cart/cart.component';
 
 export const router: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
-    { path: 'myprofile', component: MyprofileComponent },
-    { path: 'editprofile', component: EditprofileComponent },
-    { path: 'search', component: SearchComponent },
-    { path: 'postgig', component: PostgigComponent},
-    { path: 'gigpage', component: GigpageComponent},
-    { path : "carth" , component: CartComponent}
+    { path: 'my-profile', component: ProfileComponent },
+    { path: 'edit-profile', component: EditProfileComponent },
+    { path: 'filter', component: SearchComponent },
+    { path: 'post-gig', component: PostGigComponent},
+    { path: 'gig-page', component: GigPageComponent},
+    { path : 'cart' , component: CartComponent}
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);

@@ -1,4 +1,4 @@
-import {  
+import {
   trigger,
   style,
   animate,
@@ -6,9 +6,9 @@ import {
   state,
   Component,
   OnInit } from '@angular/core';
-  import { FormGroup,FormControl,Validators } from '@angular/forms';
-  import { HttpService } from '../../providers/http'
-  import { UserService } from '../../providers/user'
+  import { FormGroup, FormControl, Validators } from '@angular/forms';
+  import { HttpService } from '../../providers/http';
+  import { UserService } from '../../providers/user';
 declare var Materialize;
 @Component({
   selector: 'app-login',
@@ -23,7 +23,7 @@ declare var Materialize;
       })),
       transition('login => signup', animate('200ms ease-out')),
       transition('signup => login', animate('200ms ease-out'))
-  ,]),
+  , ]),
     trigger('changeForm' , [
       state('login', style({
         left: '0%'
@@ -33,28 +33,28 @@ declare var Materialize;
       })),
       transition('login => signup', animate('200ms ease-out')),
       transition('signup => login', animate('200ms ease-out'))
-  ,]),
+  , ]),
   ]
 
 
 })
 export class LoginComponent implements OnInit {
-  state: string = 'login'
-  loginForm : FormGroup;
-  signupForm : FormGroup;
-  constructor(private user: UserService, private http: HttpService) { 
+  state: string = 'login';
+  loginForm: FormGroup;
+  signupForm: FormGroup;
+  constructor(private user: UserService, private http: HttpService) {
 
     this.loginForm = new FormGroup({
-      "username": new FormControl('', Validators.required),
-      "password": new FormControl('', Validators.required)
-    })
+      'username': new FormControl('', Validators.required),
+      'password': new FormControl('', Validators.required)
+    });
     this.signupForm =  new FormGroup({
-      "firstname": new FormControl('', Validators.required),
-      "lastname": new FormControl('', Validators.required),
-      "email": new FormControl('', Validators.required),
-      "password": new FormControl('', Validators.required),
-      "confirm_password": new FormControl('', Validators.required),
-    })
+      'firstname': new FormControl('', Validators.required),
+      'lastname': new FormControl('', Validators.required),
+      'email': new FormControl('', Validators.required),
+      'password': new FormControl('', Validators.required),
+      'confirm_password': new FormControl('', Validators.required),
+    });
   }
   ngOnInit() {
   }
@@ -62,23 +62,23 @@ export class LoginComponent implements OnInit {
     this.state = (this.state === 'login' ? 'signup' : 'login');
     console.log(this.state);
   }
-  login(){
-    if (this.loginForm.valid){
-      this.user.login(this.loginForm.value["username"],this.loginForm.value["password"])
+  login() {
+    if (this.loginForm.valid) {
+      this.user.login(this.loginForm.value['username'], this.loginForm.value['password'])
         .subscribe(data => {
-          Materialize.toast("login_thay_gayu");
-        })
+            Materialize.toast('Login Success');
+        });
     }
   }
-  signup(){
-    if (this.signupForm.valid && this.signupForm.value['password'] == this.signupForm.value['confirm_password']){
+  signup() {
+    if (this.signupForm.valid && this.signupForm.value['password'] === this.signupForm.value['confirm_password']) {
       // this.user.signuo(this.signupForm.value["firstname"])
-      this.http.post("/api/signup", this.signupForm.value)
+      this.http.post('/api/signup', this.signupForm.value)
         .subscribe(res => {
-          Materialize.toast("signup_thay_gayu");
-          // console.log("chodu");
-          
-        })
+          Materialize.toast('signup_thay_gayu');
+
+
+        });
     }
   }
 }
