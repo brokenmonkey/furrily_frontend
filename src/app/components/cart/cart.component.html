@@ -3,9 +3,46 @@
         <div class="section col s8">
             <h4>Your Gig</h4>
         </div>
-        <div class="edit-gig col s4 right-align">
+        <div class="checkout col s4 right-align">
             <div class="btn glow-blue round">Checkout</div>
         </div>
         <div class="col s12 divider"></div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+                <div class="col s12 m6 l3">
+                    <div class="gig-card" style="max-width: 250px;min-width: 210px;margin: 0 auto 20px auto">
+                        <div class="rating small">
+                            <i class="material-icons on">star</i>
+                            <i class="material-icons on">star</i>
+                            <i class="material-icons on">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </div>
+                        <div class="pic">
+                            <img src="assets/images/gig.jpg" alt="">
+                        </div>
+                        <div class="title">
+                            <h6>
+                                I will kill you and have fun while watching it
+                            </h6>
+                        </div>
+                        <div class="bottom">
+                            <div class="posted-by left">
+                                <h6>
+                                    chakabhai
+                                </h6>
+                            </div>
+                            <div class="rate right">
+                                <h6>
+                                    $5
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
