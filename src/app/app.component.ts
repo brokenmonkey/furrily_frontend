@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
       this.router.events.subscribe((url) => {
         console.log(url.url);
 
-        if (url.url === '/login') {
+        if (url.url === '/login' || url.url === '/') {
           this.shouldShowNav = false;
         }
       });
