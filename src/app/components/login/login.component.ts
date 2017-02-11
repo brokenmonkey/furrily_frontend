@@ -76,8 +76,6 @@ export class LoginComponent implements OnInit {
       this.http.post('/api/signup', this.signupForm.value)
         .subscribe(res => {
           Materialize.toast('signup_thay_gayu');
-
-
         });
     }
   }
