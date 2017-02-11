@@ -24,6 +24,8 @@ export class AppComponent implements OnInit {
         draggable: true // Choose whether you can drag to open on touch screens
       });
       this.router.events.subscribe((url) => {
+        console.log(url.url);
+
         if (url.url === '/login') {
           this.shouldShowNav = false;
         }
