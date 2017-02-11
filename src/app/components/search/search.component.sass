@@ -1,9 +1,37 @@
 app-search
+    .filter-toggle
+        position: fixed
+        bottom: 0
+        width: 100%
+        text-align: center
+        padding: 15px 10px
+        left: 0
+        height: 50px
+        border-radius: 0
+        z-index: 150
+        img
+            height: 20px
     .gray
         color: #696969
     .sublist
         padding-left: 20px
     .filters
+        position: fixed
+        overflow-y: scroll
+        height: calc(100vh - 300px)
+        @media #{$medium-and-down}
+            top: 100%
+            background: #fff
+            height: calc(100vh) !important
+            z-index: 100
+            left: 0 !important
+            padding: 20px !important
+            padding-bottom: 0 !important
+            width: 100vw
+            .col
+                padding: 0 !important
+
+        // top: 0
         .type
             .type-input
                 input

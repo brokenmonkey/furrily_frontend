@@ -2,10 +2,13 @@
 
 </div>
 <div class="" style="max-width: 1500px;margin: auto;padding: 20px">
-    <div class="row">
+    <div class="filter-toggle hide-on-large-only background-card" (click)="filter_toggle()">
+        <img src="assets/images/filter.svg" alt="">Filter
+    </div>
+    <div class="row marg a0">
         <div class="section col s12">
             <h4>My profile</h4>
-            <div class="row">
+            <div class="row marg a0">
                 <p class="col s6">1000+ gigs found</p>
                 <div class="col s6 m5 right">
                     <div class="row" sty>
@@ -32,8 +35,8 @@
     </div>
     <div class="divider"></div>
     <div class="row" style="margin: 40px 0 0 0">
-        <div class="col s12 m12 l3 filters" style="margin: 0 auto 20px auto">
-            <div class="background-card" style="margin: auto">
+        <div class="col s12 m12 l3 filters" [@filters]="state" style="margin: 0 auto 20px auto">
+            <div style="margin: auto">
                 <div class="row">
                     <div class="type col s12">
                         <h5 style="margin: 0">Type</h5>
@@ -78,7 +81,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s12 m12 l9">
+        <div class="col s12 m12 l9 offset-l3">
             <div class="row">
                 <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
                     <div class="col s12 m6 l4">
