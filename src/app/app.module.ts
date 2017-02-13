@@ -14,6 +14,8 @@ import { SearchComponent } from './components/search/search.component';
 import { PostGigComponent } from './components/post-gig/post-gig.component';
 import { GigPageComponent } from './components/gig-page/gig-page.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { CartComponent } from './components/cart/cart.component';
     PostGigComponent,
     GigPageComponent,
     CartComponent,
+    ChatComponent,
+    HomeComponent,
     ],
   imports: [
     BrowserModule,
