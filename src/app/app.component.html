@@ -14,15 +14,17 @@
         </div>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li class="icon"><img src="assets/images/cart.svg"></li>
-            <li class="icon left-line"><img src="assets/images/cart.svg"></li>
             <li class="icon left-line"><img src="assets/images/chat.svg"></li>
             <li class="text left-line" style="margin-right: 5px">post a job</li>
             <li class="btn-add glow-blue circle blue base" style="margin-left: 5px">
                 <div class="add"></div>
             </li>
-            <li class="img left-line"><img src="assets/images/pic.jpg" alt=""></li>
-            <li class="text" style="margin-left: 5px">JavaScript</li>
+            <li class="img left-line">
+                <a class="dropdown-button" data-activates='dropdown1'><img [src]="user.profilePicture" alt=""></a>
+            </li>
+            <li class="text" style="margin-left: 5px" style="font-size: 1.5em; font-weight: 300">{{user.name}}</li>
         </ul>
+
         <div class="dots right hide-on-large-only button-collapse" data-activates="slide-out">
             <div class="circle"></div>
             <div class="circle"></div>
@@ -37,29 +39,37 @@
 <ul id="slide-out" class="side-nav">
     <li>
         <div class="userView">
-            <a href="#!user"><img class="circle" src="assets/images/pic.jpg"></a>
-            <a href="#!name"><span class="grey-text text-darken-4 name">John Doe</span></a>
-            <a href="#!email"><span class="grey-text text-darken-4 email">jdandturk@gmail.com</span></a>
+            <div class="row">
+                <div class="row"><img class="circle" style="transform: translate(-50%); position: absolute; left: 50%; width: 100px; height: 100px" [src]="user.profilePicture"></div>
+                <div class="row" style="margin-top:100px; text-align: center; font-size: 1.5em">
+                    {{user.name}}
+                </div>
+            </div>
         </div>
     </li>
-    <li><a href="#!">My profile</a></li>
+    <li><a href="#!"><i class="material-icons">account_box</i>My profile</a></li>
     <li>
         <div class="divider"></div>
     </li>
-    <li><a href="#!">Second Link</a></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    <li><a href="#!"><i class="material-icons">message</i>Chats</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a href="#!"><i class="material-icons">shopping_cart</i>Cart</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a href="#!">Logout</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
 </ul>
-<router-outlet></router-outlet>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <defs>
-            <filter id="f1" x="0" y="0">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
-            </filter>
-        </defs>
-</svg>
+<div class="row" style="margin-bottom: 64px;" *ngIf="shouldShowNav">
 
-<div class="blur-backdrop">
+</div>
+<router-outlet></router-outlet>
+
+<div class="backdrop-blur">
     <div class="loading">
         <div class="preloader-wrapper medium active">
             <div class="spinner-layer spinner-blue">

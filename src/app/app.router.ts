@@ -12,10 +12,12 @@ import { CartComponent } from './components/cart/cart.component';
 export const router: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
-    { path: 'my-profile', component: ProfileComponent },
+    { path: 'profile', component: ProfileComponent },
+    { path: 'profile/:id', component: ProfileComponent },
     { path: 'edit-profile', component: EditProfileComponent },
     { path: 'filter', component: SearchComponent },
     { path: 'post-gig', component: PostGigComponent},
+    { path: 'edit-gig/:id', component: PostGigComponent},
     { path: 'gig-page', component: GigPageComponent},
     { path: 'cart' , component: CartComponent}
 ];

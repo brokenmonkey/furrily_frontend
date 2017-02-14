@@ -37,6 +37,7 @@
 .gig-card,.portfolio-card,.review-card
     border-radius: 7.5px
     padding: 10px
+    max-width: 300px
     // width: 250px
     box-shadow: 0px 3px 30px rgba(#000,0.3)
     background-color: #fff
@@ -44,6 +45,10 @@
     height: 400px
     position: relative
     margin: 20px auto
+    .btn-del
+        position: absolute
+        right: 5px
+        top: 5px
     &.portfolio-card
         height: 300px
     @media(max-width: 600px)
@@ -60,6 +65,7 @@
         img
             // opacity: 0.3
             position: absolute
+            height: 100%
             width: 100%
             left: 50%
             top: 50%
@@ -98,8 +104,15 @@
     width: 30px
     height: 30px
     padding: 0
+    cursor: pointer
     border-radius: 20px
     position: relative
+    i
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+
     .add
         &:after,&:before
             content: ""
@@ -143,6 +156,9 @@
         margin-left: 10px
     &.l20
         margin-left: 20px
-    
+
 .inlineblock
     display: inline-block
+
+img
+    object-fit: cover

@@ -9,6 +9,7 @@ export class User {
     email: string;
     isLoggedIn: boolean;
     objectId: string;
+    profilePicture: string;
 }
 
 export class JWTHelper {
@@ -121,29 +122,32 @@ export class UserService {
                     let requestOptions = new RequestOptions({headers : headers});
                     this.http.get(this.util.host + '/api/me', requestOptions)
                         .map(res => res.json())
-                        .subscribe(data => {
+                        .subscribe((data) => {
                             data = data.response;
                             console.log(data);
-                            if (data.isInviteAccepted) {
-                                this.setUser(data.name, data.email, token, data.objectId);
-                                observer.next(data);
-                            } else {
-                                observer.error('Invite Not Accepted');
-                            }
-                        }, error => {
+                            this.setUser(data.name, data.email, token, data.objectId, data.profilePicture);
+                            observer.next(data);
+                            observer.complete();
+                        }, (error) => {
+                            console.log("error");
                             observer.error(error);
+                            observer.complete();
                         });
+                }, err => {
+                    observer.error(err);
+                    observer.complete();
                 });
         });
     }
 
-    private setUser(name, email, token, objectId) {
+    private setUser(name, email, token, objectId, profilePicture) {
         localStorage.clear();
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('name', name);
         localStorage.setItem('email', email);
         localStorage.setItem('token', token);
         localStorage.setItem('objectId', objectId);
+        localStorage.setItem('profilePicture', profilePicture);
         console.log(token);
 
         this.startTokenRefreshService(token);
@@ -158,6 +162,7 @@ export class UserService {
                 user.name = localStorage.getItem('name');
                 user.email = localStorage.getItem('email');
                 user.objectId = localStorage.getItem('objectId');
+                user.profilePicture = localStorage.getItem("profilePicture")
                 user.isLoggedIn = true;
             } else {
                 console.log("error");

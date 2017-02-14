@@ -1,53 +1,61 @@
 <div class="container">
     <div class="row">
         <h4 class="col s12">Edit Profile</h4>
+    </div>
+    <div class="row">
         <!--<hr>-->
-        <form action="" class="details row col s12">
-            <div class="row">
-                <h5 class="col s6">
-                    Personal details
-                </h5>
+        <div class="center-align">
+            <div class="file-field profilePicture" [style.background]="'url(' + user.profilePicture + ')'">
+                <input type="file" (change)="fileSelected($event)">
+            </div>
+        </div>
+        <form (ngSubmit)="save()" class="details row col s12" [formGroup]="profileForm">
+            <h5 class="col s12">
+                Personal details
+            </h5>
+            <div class="input-field col s12 m6">
+                <input id="firstname" type="text" class="validate" formControlName="firstname">
+                <label for="firstname">First Name</label>
             </div>
             <div class="input-field col s12 m6">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
-            </div>
-            <div class="input-field col s12 m6">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
+                <input id="lastname" type="text" class="validate" formControlName="lastname">
+                <label for="lastname">Last Name</label>
             </div>
             <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1">Bio</label>
+                <div class="chips"></div>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="bio" class="materialize-textarea" formControlName="bio"></textarea>
+                <label for="bio">Bio</label>
             </div>
             <h5 class="col s12">
-                Contact details
+                Location
             </h5>
-            <div class="input-field col s12 m6">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">city</label>
+            <div class="input-field col s12 m4">
+                <input id="Country" type="text" class="validate" formControlName="country">
+                <label for="Country">Country</label>
             </div>
-            <div class="input-field col s12 m6">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">State</label>
+            <div class="input-field col s12 m4">
+                <input id="State" type="text" class="validate" formControlName="state">
+                <label for="State">State</label>
             </div>
-            <div class="input-field col s12 m6">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Zipcode</label>
+            <div class="input-field col s12 m4">
+                <input id="City" type="text" class="validate" formControlName="city">
+                <label for="City">City</label>
             </div>
             <h5 class="col s12">
-                Account details
+                Contact Details
             </h5>
             <div class="input-field col s12 m6">
-                <input id="email" type="text" class="validate">
-                <label for="email">email</label>
+                <input id="email" type="tel" class="validate" formControlName="email">
+                <label for="email">Email</label>
             </div>
             <div class="input-field col s12 m6">
-                <input id="password" type="password" class="validate">
-                <label for="password">Password</label>
+                <input id="phone_no" type="tel" class="validate" formControlName="phone_number">
+                <label for="phone_no">Phone Number</label>
             </div>
-            <div class="col s12 right-align marg t20">
-                <button class="btn round glow-blue">Save</button>
+            <div class="input-field col s12">
+                <button class="submit btn glow-blue round" [disabled]="!profileForm.valid" style="width: 100%">Save</button>
             </div>
         </form>
     </div>

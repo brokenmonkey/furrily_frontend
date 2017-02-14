@@ -1,56 +1,69 @@
 <div class="container">
-    <div class="row">
+    <div class="row" style="margin-bottom: 0">
         <div class="section">
-            <h4>Poast a Gig</h4>
+            <h4>{{ title }}</h4>
             <div class="divider"></div>
         </div>
     </div>
     <div class="row">
-        <div class="col s12">
-            <div class="row">
-                <form action="">
-                    <div class="input-field col s12">
-                        <input id="gigTitle" type="text" class="validate">
-                        <label for="gigTitle">Title</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <textarea id="description" class="materialize-textarea"></textarea>
-                        <label for="description">Description</label>
-                    </div>
-                    <div class="input-field col s12 m6">
-                        <input id="gigTitle" type="text" class="validate">
-                        <label for="gigTitle">Prize</label>
-                    </div>
-                    <div class="input-field col s12 m6">
-                        <input id="gigTitle" type="text" class="validate">
-                        <label for="gigTitle">Time TO Compleate(days)</label>
-                    </div>
-                    <div class="file-field input-field col s12">
-                        <p class="caption">
-                            Upload Atachment
-                        </p>
-                        <div class="btn glow-blue round">
-                            <span>File</span>
-                            <input type="file" multiple>
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Upload one or more files">
-                        </div>
-                    </div>
-                    <div class="col s12">
-                        <p class="caption">
-                            Skills
-                        </p>
-                        <div class="chips"></div>
-                    </div>
-                    <div class="col s12">
-                        <p class="caption">
-                            Categories
-                        </p>
-                        <div class="chips"></div>
-                    </div>
-                </form>
+        <form (ngSubmit)="decide()" [formGroup]="gigForm">
+            <div class="input-field col s12">
+                <input id="gigTitle" type="text" class="validate" formControlName="title">
+                <label for="gigTitle">Title</label>
             </div>
-        </div>
+            <div class="input-field col s12">
+                <textarea id="description" class="materialize-textarea" formControlName="description"></textarea>
+                <label for="description">Description</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="price" type="number" class="validate" value="50" formControlName="price">
+                <label for="price">Price ($)</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="time" type="number" class="validate" value="3" formControlName="time">
+                <label for="time">Deliver In (Days)</label>
+            </div>
+            <div class="file-field input-field col s12 m6" *ngIf="!gigId">
+                <p class="caption">
+                    Upload Banners
+                </p>
+                <div class="btn glow-blue round">
+                    <span>File</span>
+                    <input type="file" multiple id="banners" (change)="selectFile($event, 'banners')">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+            </div>
+            <div class="file-field input-field col s12 m6" *ngIf="!gigId">
+                <p class="caption">
+                    Upload Atachment
+                </p>
+                <div class="btn glow-blue round">
+                    <span>File</span>
+                    <input type="file" multiple id="attachments" (change)="selectFile($event, 'attachments')">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+            </div>
+
+            <div class="col s12 m6 ">
+                <p class="caption ">
+                    Skills
+                </p>
+                <div class="chips " id="skills"></div>
+            </div>
+            <div class="col s12 m6 ">
+                <p class="caption ">
+                    Categories
+                </p>
+                <div class="chips " id="categories"></div>
+            </div>
+            <div class="col s12 ">
+                <button class="submit btn glow-blue round" style="width: 100%" [disabled]="!gigForm.valid" *ngIf="!gigId">Save</button>
+                <button class="submit btn glow-blue round" style="width: 100%" [disabled]="!gigForm.valid" *ngIf="gigId">Edit</button>
+            </div>
+        </form>
     </div>
 </div>

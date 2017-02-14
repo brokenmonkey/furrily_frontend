@@ -9,6 +9,8 @@ import {
   import { FormGroup, FormControl, Validators } from '@angular/forms';
   import { HttpService } from '../../providers/http';
   import { UserService } from '../../providers/user';
+  import { Loader } from '../../providers/loader';
+  import { Router } from '@angular/router';
 declare var Materialize;
 @Component({
   selector: 'app-login',
@@ -42,7 +44,7 @@ export class LoginComponent implements OnInit {
   state: string = 'login';
   loginForm: FormGroup;
   signupForm: FormGroup;
-  constructor(private user: UserService, private http: HttpService) {
+  constructor(private user: UserService, private http: HttpService, private router: Router) {
 
     this.loginForm = new FormGroup({
       'username': new FormControl('', Validators.required),
@@ -64,18 +66,34 @@ export class LoginComponent implements OnInit {
   }
   login() {
     if (this.loginForm.valid) {
+      Loader.present();
       this.user.login(this.loginForm.value['username'], this.loginForm.value['password'])
         .subscribe(data => {
             Materialize.toast('Login Success');
+            this.router.navigate(['/profile']);
+            Loader.dismiss();
+        }, error => {
+            if (error.status === 401) {
+              Materialize.toast('Invalid Credentials');
+            } else {
+              Materialize.toast('Something unexpected happened');
+            }
+            Loader.dismiss();
+
         });
     }
   }
   signup() {
     if (this.signupForm.valid && this.signupForm.value['password'] === this.signupForm.value['confirm_password']) {
       // this.user.signuo(this.signupForm.value["firstname"])
+      Loader.present();
       this.http.post('/api/signup', this.signupForm.value)
         .subscribe(res => {
-          Materialize.toast('signup_thay_gayu');
+          Materialize.toast('Signup Success');
+          Loader.dismiss();
+        }, err => {
+            Materialize.toast('Something unexpected happened');
+            Loader.dismiss();
         });
     }
   }
